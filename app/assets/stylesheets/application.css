@@ -63,19 +63,6 @@ h2{
 }
 
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 180px;
-  margin-top: 64px;
-  padding-top: 90px;
-  background-color: #111;
-  box-sizing: border-box;
-  color: #fff;
-  text-align: center;
-}
-
 .container-login {
   max-width: 576px;
   padding: 2rem;
@@ -108,4 +95,13 @@ input[type="password"] {
   height: 40px;
 }
 
+.device_frame {
+  max-width: 600px;
+  text-align: center;
+  padding: 24px;
+  margin: 0px auto;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: rgb(21 27 38 / 15%) 0px 1px 3px 0px;
+}
 
