@@ -1,10 +1,12 @@
 class RoomsController < ApplicationController
+  before_action :authenticate_user!, only: [:new,:create,:update,:set_room,:room_params,:img_params]
+
   def index
     @rooms = current_user.rooms
   end
 
   def new
-    @room = current_user.new
+    @room = current_user.rooms.new
   end
 
   def create
@@ -52,6 +54,10 @@ class RoomsController < ApplicationController
 
   def room_params
     params.require(:room).permit(:home_type, :room_type, :accommodate, :bed_room, :bath_room, :listing_name, :summary, :address, :is_tv, :is_kitchen, :is_air, :is_heating, :is_internet, :price, :active)
+  end
+
+  def img_params
+    params.require(:post).permit(:text, :image)
   end
 
 end
