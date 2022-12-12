@@ -105,3 +105,12 @@ input[type="password"] {
   box-shadow: rgb(21 27 38 / 15%) 0px 1px 3px 0px;
 }
 
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
