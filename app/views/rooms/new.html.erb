@@ -1,55 +1,78 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<%= form_with model: @room, local: true do |f| %>
   <div class="container-fiuld room-new">
-    <div class="row p-3">
-      <nav class="nav flex-column col-lg-2">
-        <a class="nav-link active" aria-current="page" href="/rooms/new">基本情報</a>
+    <div class="row">
+      <nav class="active nav flex-column col-lg-2 shadow mt-0 p-5">
+        <a class="nav-link active h5 mt-3 border-right border-primary" aria-current="page" href="/rooms/new">基本情報　　　</a>
       </nav>
 
       <div class="col-lg-10 room-view p-3">
-        <div class="room-view-box">
-          <div class="update-content">
-            <div class="field form-row pt-1">
-              <%= f.label :name, "ルーム名", {class: "col-md-3 required-a"}%>
-              <span class="badge text-bg-danger">必須</span>
-              <%= f.text_field :name, autofocus: true, autocomplete: "name" ,placeholder: "ルーム名を入力", :class => 'fmb-4 col-md-5 px-2'%>
+        <div class="room-view-box m-5">
+          <%= form_with model: @room, local: true do |f| %>
+            <div class="update-content row mb-3">
+              <h5>　　 ルーム情報登録</h5>
             </div>
-          </div>
-
-          <div class="update-content">
-            <div class="field form-row pt-1">
-              <%= f.label :introduction, "ルーム紹介", {class: "required-a"} %>
-              <span class="badge text-bg-danger">必須</span>
-              <%= f.text_field :introduction, autofocus: true, autocomplete: "introduction" ,placeholder: "ルーム紹介", :class => 'fmb-4 col-md-5 px-2'%>
-            </div>
-          </div>
-
-          <div class="update-content">
-            <div class="field form-row pt-1">
-              <%= f.label :price, "料金", {class: "required-a"}%>
-              <span class="badge text-bg-danger">必須</span>
-              <%= f.text_field :price, autofocus: true, autocomplete: "price" ,placeholder: "料金", :class => 'fmb-4 col-md-5 px-2'%>
-            </div>
-          </div>
-
-          <div class="update-content">
-            <div class="field form-row pt-1">
-              <%= f.label :address, "住所", {class: "required-a"}%>
-              <span class="badge text-bg-danger">必須</span>
-              <%= f.text_field :address, autofocus: true, autocomplete: "address" ,placeholder: "住所", :class => 'fmb-4 col-md-5 px-2'%>
-            </div>
-          </div>
-
-          <div class="update-content">
-            <form>
-              <div class="field form-row pt-1">
-                <%= f.label :image, "ルーム画像", {class: "required-a"}%>
-                <span class="badge text-bg-danger">必須</span>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+            <div class="update-content">
+              <div class="field form-row pt-1 d-flex mx-xl-5 border-top mt-3">
+                <div>
+                  <%= f.label :name, "　ルーム名", {class: "required-a"}%>
+                  <span class="badge text-bg-danger">必須</span>
+                </div>
+                <div class ="p-2 mx-xl-5 w-75">
+                  <%= f.text_field :name, autofocus: true, autocomplete: "name" ,placeholder: "ルーム名", :class => 'fmb-4 col-md-5 px-2 form-control'%>
+                </div>
               </div>
-            </form>
-          </div>
-        </div>
+            </div>
+
+            <div class="update-content">
+              <div class="field form-row pt-1 d-flex mx-xl-5 border-top mt-5">
+                <div>
+                  <%= f.label :introduction, "ルーム紹介", {class: "required-a"} %>
+                  <span class="badge text-bg-danger">必須</span>
+                </div>
+                <div class ="p-2 mx-xl-5 w-75">
+                  <%= f.text_area :introduction, size: "10x3", autofocus: true, autocomplete: "introduction" ,placeholder: "ルーム説明を入力", :class => 'fmb-4 col-md-5 px-2 form-control'%>
+                </div>
+              </div>
+            </div>
+
+            <div class="update-content">
+              <div class="field form-row pt-1 d-flex mx-xl-5 border-top mt-5">
+                <div>
+                  <%= f.label :price, "　　　料金", {class: "required-a"}%>
+                  <span class="badge text-bg-danger">必須</span>
+                </div>
+                <div class ="p-2 mx-xl-5 w-75">
+                  <%= f.text_field :price, autofocus: true, autocomplete: "price" ,placeholder: "料金", :class => 'fmb-4 col-md-5 px-2 form-control'%>
+                </div>
+              </div>
+            </div>
+
+            <div class="update-content">
+              <div class="field form-row pt-1 d-flex mx-xl-5 border-top mt-5">
+                <div>
+                  <%= f.label :address, "　　　住所", {class: "required-a"}%>
+                  <span class="badge text-bg-danger">必須</span>
+                </div>
+                <div class ="p-2 mx-xl-5 w-75">
+                  <%= f.text_field :address, autofocus: true, autocomplete: "address" ,placeholder: "住所", :class => 'fmb-4 col-md-5 px-2 form-control'%>
+                </div>
+              </div>
+            </div>
+
+            <div class="update-content">
+              <form>
+                <div class="field form-row pt-1 d-flex mx-xl-5 border-top mt-5">
+                  <div>
+                    <%= f.label :image, "ルーム画像", {class: "required-a"}%>
+                    <span class="badge text-bg-danger">必須</span>
+                  </div>
+                  <div class ="p-2 mx-xl-5 w-75">
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                  </div>
+                </div>
+              </form>
+            </div>
+          <% end %>
       </div>
     </div>
 
@@ -57,5 +80,5 @@
 
 
   </div>
-<% end %>
+
 

@@ -114,3 +114,10 @@ input[type="password"] {
   margin-left: -15px;
 }
 
+.room-view-box {
+  max-width: 880px;
+  background-color: #fff;
+  border: 1px solid #eaedef;
+  margin: 50px auto;
+}
+
