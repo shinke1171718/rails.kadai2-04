@@ -43,7 +43,7 @@
                   <span class="badge text-bg-danger">必須</span>
                 </div>
                 <div class ="p-2 mx-xl-5 w-75">
-                  <%= f.text_field :price, autofocus: true, autocomplete: "price" ,placeholder: "料金", :class => 'fmb-4 col-md-5 px-2 form-control'%>
+                  <%= f.text_field :price, autofocus: true, autocomplete: "price" ,placeholder: "1日あたりの料金を入力", :class => 'fmb-4 col-md-5 px-2 form-control'%>
                 </div>
               </div>
             </div>
@@ -55,15 +55,15 @@
                   <span class="badge text-bg-danger">必須</span>
                 </div>
                 <div class ="p-2 mx-xl-5 w-75">
-                  <%= f.text_field :address, autofocus: true, autocomplete: "address" ,placeholder: "住所", :class => 'fmb-4 col-md-5 px-2 form-control'%>
+                  <%= f.text_field :address, autofocus: true, autocomplete: "address" ,placeholder: "住所を入力", :class => 'fmb-4 col-md-5 px-2 form-control'%>
                 </div>
               </div>
             </div>
 
             <div class="update-content">
               <form>
-                <div class="field form-row pt-1 d-flex mx-xl-5 border-top mt-5">
-                  <div class="col-md-2 required-a">
+                <div class="field form-row pt-1 d-flex mx-xl-5 border-top border-bottom mt-5">
+                  <div class="col-md-2 required-a mb-5">
                     <%= f.label :image, "ルーム画像", {class: "required-a"}%>
                     <span class="badge text-bg-danger">必須</span>
                   </div>
