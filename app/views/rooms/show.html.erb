@@ -1,18 +1,20 @@
-<% form_for(@room) do |f| %>
-  <div class="container room-show">
-    <div class="row">
-      <div class="col-md-8">
-        <div class="room-show-nav">
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="room-show-nav">
-          <h5 class="price-icon">
+<%= form_with model: @reservation, method: :post, url: new_reservation_path do |f| %>
+  <% form_for(@room) do |f| %>
+    <div class="container room-show">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="room-show-nav">
           </div>
-          <div class="room-show-date-select">
+        </div>
+        <div class="col-md-4">
+          <div class="room-show-nav">
+            <h5 class="price-icon">
+            </div>
+            <div class="room-show-date-select">
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  <% end %>
 <% end %>

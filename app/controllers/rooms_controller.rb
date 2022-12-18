@@ -12,6 +12,7 @@ class RoomsController < ApplicationController
   def create
     @room = current_user.rooms.new(room_params)
     if @rooms.save
+    pry-rails
       redirect_to "/rooms/#{@room.id}",notice: "保存しました。"
     else
       flash[:alert] = "問題が発生しました。"
