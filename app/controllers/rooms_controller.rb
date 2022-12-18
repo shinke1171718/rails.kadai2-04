@@ -19,7 +19,12 @@ class RoomsController < ApplicationController
     end
   end
 
-  def listing
+  def show
+    @user = current_user
+    @room = Room.find_by(id:params[:id])
+    unless @room
+      render 'shared/404', status: 404
+    end
   end
 
   def pricing

@@ -22,9 +22,9 @@ Rails.application.routes.draw do
   post '/users/edit', to: 'users#update'
   resources :rooms, except: [:edit] do
     member do
-      get 'listing'
+      get 'show'
       get 'pricing'
-      get 'description'
+      get 'new'
       get 'photo_upload'
       get 'amenities'
       get 'location'

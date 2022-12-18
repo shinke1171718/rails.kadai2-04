@@ -33,12 +33,20 @@
             </li>
           </ul>
           <form class="d-flex" role="search">
-            <button type="button" class="btn btn-primary btn-lg m-2">
-              <a href="/users/sign_in" class ="text-white text-decoration-none">ログイン</a>
-            </button>
-            <button type="button" class="btn btn-secondary btn-lg m-2" >
-              <a href="/users/sign_up" class ="text-white text-decoration-none">登録する</a>
-            </button>
+            <% if logged_in? %>
+              <li>
+                <button type="button" class="btn btn-primary btn-lg m-2">
+                  <a href="/users/sign_in" class ="text-white text-decoration-none">ログイン</a>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="btn btn-secondary btn-lg m-2" >
+                  <a href="/users/sign_up" class ="text-white text-decoration-none">登録する</a>
+                </button>
+              </li>
+            <% else %>
+
+            <% end %>
           </form>
         </div>
       </div>

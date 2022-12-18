@@ -121,3 +121,6 @@ input[type="password"] {
   margin: 50px auto;
 }
 
+.room-show, .reservations-new {
+  padding: 30px 0;
+}
