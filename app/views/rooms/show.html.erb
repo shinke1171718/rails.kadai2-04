@@ -4,6 +4,13 @@
       <div class="row">
         <div class="col-md-8">
           <div class="room-show-nav">
+            <%= f.file_field :photo, size: "300x250", alt: "部屋画像", class:"room-show-image" %>
+          </div>
+          <div class="room-show-detile">
+            <div class="room-show-detile-icon">
+            </div>
+            <div class="room-show-profile">
+            </div>
           </div>
         </div>
         <div class="col-md-4">
@@ -11,6 +18,11 @@
             <h5 class="price-icon">
             </div>
             <div class="room-show-date-select">
+              <%= form_with model: @reservation, method: :post, url: new_reservation_path do |f| %>
+                <%= f.label :start_date, "開始日", {class: "form-control mb-4"}%>
+                <%= f.label :end_date, "終了日", {class: "form-control mb-4"}%>
+                <%= f.label :guests, "人数", {class: "form-control mb-4"}%>
+              <% end %>
             </div>
           </div>
         </div>
