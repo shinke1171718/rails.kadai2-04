@@ -10,9 +10,8 @@ class RoomsController < ApplicationController
   end
 
   def create
-    @room = current_user.rooms.new(room_params)
+    @room = current_user.rooms.new(params(:room), permit(:name, :user_id, :introduction, :price, :address))
     if @rooms.save
-    pry-rails
       redirect_to "/rooms/#{@room.id}",notice: "保存しました。"
     else
       flash[:alert] = "問題が発生しました。"
@@ -58,9 +57,6 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
   end
 
-  def room_params
-    params.require(:room).permit(:home_type, :room_type, :accommodate, :bed_room, :bath_room, :listing_name, :summary, :address, :is_tv, :is_kitchen, :is_air, :is_heating, :is_internet, :price, :active)
-  end
 
   def img_params
     params.require(:post).permit(:text, :image)
