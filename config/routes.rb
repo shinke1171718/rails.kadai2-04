@@ -16,14 +16,17 @@ Rails.application.routes.draw do
     root "users/sessions#new"
   end
 
+  post '/rooms/:id/new', to: 'rooms#create'
+
   resources :users, only: [:show]
   resources :reservations
 
   post '/users/edit', to: 'users#update'
+  
   resources :rooms, except: [:edit] do
     member do
       get 'show'
-      get 'pricing'
+      get 'create'
       get 'new'
       get 'photo_upload'
       get 'amenities'
