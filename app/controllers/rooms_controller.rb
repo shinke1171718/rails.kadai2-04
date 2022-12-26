@@ -13,7 +13,6 @@ class RoomsController < ApplicationController
     binding.pry
     @room = current_user.rooms.new(params(:room), permit(:name, :user_id, :introduction, :price, :address))
     if @room.save
-      binding.pry
       redirect_to "/rooms/#{@room.id}",notice: "保存しました。"
     else
       flash[:alert] = "問題が発生しました。"
