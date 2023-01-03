@@ -9,9 +9,9 @@ class RoomsController < ApplicationController
     @room = current_user.rooms.new
   end
 
+
   def create
-    binding.pry
-    @room = current_user.rooms.new(params(:room), permit(:name, :user_id, :introduction, :price, :address))
+    @room = current_user.rooms.new(room_params)
     if @room.save
       redirect_to "/rooms/#{@room.id}",notice: "保存しました。"
     else
@@ -56,6 +56,10 @@ class RoomsController < ApplicationController
   private
   def set_room
     @room = Room.find(params[:id])
+  end
+
+  def room_params
+    params.require(:room). permit(:name,:introduction, :user_id, :roomimages, :address, :price)
   end
 
 

@@ -1,22 +1,16 @@
 Rails.application.routes.draw do
-  resources :photos
-  get 'rooms/index'
-  get 'rooms/new'
-  get 'rooms/create'
+  resources :rooms
   get 'rooms/listing'
   get 'rooms/pricing'
   get 'rooms/description'
   get 'rooms/photo_upload'
   get 'rooms/amenities'
   get 'rooms/location'
-  get 'rooms/update'
   get 'reservations/create'
   devise_for :users
   devise_scope :user do
     root "users/sessions#new"
   end
-
-  post '/rooms/:id/new', to: 'rooms#create'
 
   resources :users, only: [:show]
   resources :reservations

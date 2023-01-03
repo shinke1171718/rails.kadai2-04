@@ -1,2 +1,58 @@
-<h1>Rooms#index</h1>
-<p>Find me in app/views/rooms/index.html.erb</p>
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Codespaces
+Marketplace
+Explore
+ 
+@shinke1171718 
+takuya52
+/
+hotel_app_1
+Public
+Code
+Issues
+Pull requests
+1
+Actions
+Projects
+Security
+Insights
+hotel_app_1/app/views/rooms/index.html.erb
+
+田辺拓也 課題の提出1回目
+Latest commit 49bb668 on Aug 17, 2022
+ History
+ 0 contributors
+30 lines (28 sloc)  846 Bytes
+
+<div class="container-fluid room-posts">
+  <% if flash[:notice] %>
+    <p class = "notice"><%= flash[:notice] %>
+  <% end %>
+  <h4 class="pb-4">登録済みルーム一覧</h4>
+  <table>
+    <thead>
+      <tr align="center">
+        <th>ルーム画像</th>
+        <th>ルーム名</th>
+        <th>ルーム紹介</th>
+        <th>料金</th>
+        <th>作成日</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @rooms.each do |room| %>
+        <tr>
+          <td><%= image_tag room.image_name, class: "room-image" %></td>
+          <td><%= link_to room.name, {controller: 'reservations', action: 'new', id: room.id} %></td>
+          <td><%= room.introduction %></td>
+          <td><%= room.single_rate %></td>
+          <td><%= room.created_at.to_s(:datetime_jp) %></td>
+        </tr>
+      <% end %>    
+    </tbody>
+  </table>
+</div>
+
