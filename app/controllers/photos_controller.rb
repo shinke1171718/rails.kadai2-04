@@ -8,6 +8,8 @@ class PhotosController < ApplicationController
 
   # GET /photos/1 or /photos/1.json
   def show
+    @roomimage =  Room.find(params[:roomimages])
+    send_data @roomimage
   end
 
   # GET /photos/new
@@ -22,7 +24,6 @@ class PhotosController < ApplicationController
   # POST /photos or /photos.json
   def create
     @photo = Photo.new(photo_params)
-
     respond_to do |format|
       if @photo.save
         format.html { redirect_to photo_url(@photo), notice: "Photo was successfully created." }

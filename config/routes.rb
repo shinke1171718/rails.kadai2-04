@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     root "users/sessions#new"
   end
 
+  resources :photos
+
   resources :users, only: [:show]
   resources :reservations
 

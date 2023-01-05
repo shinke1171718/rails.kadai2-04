@@ -22,7 +22,7 @@ class RoomsController < ApplicationController
 
   def show
     @user = current_user
-    @room = Room.find_by(id:params[:id])
+    @room = set_room
     unless @room
       render 'shared/404', status: 404
     end
