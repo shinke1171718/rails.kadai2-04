@@ -22,7 +22,7 @@ class RoomsController < ApplicationController
 
   def show
     @user = current_user
-    @room = set_room
+    @room = Room.find(params[:id])
     unless @room
       render 'shared/404', status: 404
     end
@@ -45,7 +45,7 @@ class RoomsController < ApplicationController
 
   def update
     @room = Room.find(params[:id])
-    if @room.update(params.require(:room),permit(:name,:introduction,:price,:address))
+    if @room.update(params.require(:room),permit(:name,:introduction,:price,:address,:roomimages))
       flash[:notice] = "ユーザーIDが「#{@user.id}」の情報を更新しました"
       redirect_to "/rooms/#{@room.id}"
     else
@@ -54,10 +54,6 @@ class RoomsController < ApplicationController
   end
 
   private
-  def set_room
-    @room = Room.find(params[:id])
-  end
-
   def room_params
     params.require(:room). permit(:name,:introduction, :user_id, :roomimages, :address, :price)
   end
@@ -66,5 +62,4 @@ class RoomsController < ApplicationController
   def img_params
     params.require(:post).permit(:text, :image)
   end
-
 end
