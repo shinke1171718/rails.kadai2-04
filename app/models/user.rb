@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_many :reservations,dependent: :destroy
 
   has_one_attached :image
-  mount_uploader :image, ImageUploader
+  mount_uploader :userimages, ImageUploader
 end

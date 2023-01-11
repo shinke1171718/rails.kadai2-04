@@ -34,15 +34,21 @@
           </ul>
           <form class="d-flex" role="search">
             <% if user_signed_in? %>
-              <li>
-                <button type="button" class="btn btn-primary btn-lg m-2">
+              <% if user.userimages.present? %>
+                <il>
+                  <%= image_tag @user.userimages.url %>
+                </il>
+                <li>
                   <%= current_user.name %>
-                </button>
-              </li>
-              <li>
-
-                
-              </li>
+                </li>
+              <% else %>
+                <il>
+                  # ユーザーアイコン
+                </il>
+                <li>
+                  <%= current_user.name %>
+                </li>
+              <% end %>
             <% else %>
               <li>
                 <button type="button" class="btn btn-primary btn-lg m-2">

@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
     user_path(resource)
   end
 
+
   private
 
   def configure_permitted_parameters
